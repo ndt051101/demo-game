@@ -32,10 +32,12 @@ hr {
 .facebook {
   color: white !important;
   background-color: #3b5998 !important;
+  border-color: #3b5998 !important;
 }
 
 .google {
   background: #df4a32 !important;
+  border-color: #df4a32 !important;
   color: white !important;
 }
 
@@ -116,18 +118,18 @@ hr {
   font-size: 20px;
   color: #fff;
 }
-.header-container .header-content .right-content .user p {
+.header-container .header-content .right-content .user span {
   color: #fff;
   margin-left: 0.5rem;
   line-height: 1.1rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 .header-container .header-content .right-content .user:hover .dropdown-user {
   display: block;
 }
 .header-container .header-content .right-content .user .dropdown-user {
   position: absolute;
-  top: 150%;
+  top: 100%;
   left: -78px;
   width: 250px;
   z-index: 1000;
@@ -156,24 +158,353 @@ hr {
   z-index: 9999;
 }
 .header-container .header-content .right-content .user .dropdown-user .user-item {
-  background-color: #fdd835;
   border-bottom: 1px solid #dbdbdb;
   color: black;
   text-align: center;
   line-height: 41px;
   border-radius: 4px;
-  margin: 10px 0;
+  margin-top: 10px;
+  padding: 0;
   font-weight: 500;
 }
 .header-container .header-content .right-content .user .dropdown-user .user-item i {
   line-height: 42px;
   font-size: 1rem;
   float: left;
+  color: #fff;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   width: 42px;
   height: 42px;
 }
 .header-container .header-content .right-content .user .dropdown-user .user-item span {
+  font-weight: 500;
+}
+.header-container .header-content .right-content .user .modal-dialog {
+  width: 100%;
+  max-width: 800px !important;
+  margin-top: 70px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content {
+  width: 100%;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: #d6d6d6;
+  position: absolute;
+  left: 400px;
+  top: 0;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-header {
+  border: none;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0 0 15px 23px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .login-info {
+  width: 49%;
+  height: 100%;
+  float: left;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .login-info .title-login {
+  font-size: 30px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .login-info p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  width: 81%;
+  margin-top: 14px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .login-info .image-login {
+  margin-top: 84px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login {
+  width: 51%;
+  padding: 0 25px 0 46px;
+  height: 100%;
+  float: right;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .nav-header-login {
+  display: flex;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .nav-header-login .nav-title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+  padding: 15px 0 11px 0;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .nav-header-login .nav-title:hover {
+  font-weight: 500;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .nav-header-login .open_login_mini {
+  margin-left: 26px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .nav-header-login .open_register_mini {
+  margin-left: 63px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .nav-header-login .active {
+  position: relative;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .nav-header-login .active::after {
+  content: "";
+  width: 140%;
+  height: 3px;
+  top: 39px;
+  background: #21beff;
+  position: absolute;
+  left: -16%;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login {
+  margin-top: 15px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .login-container {
+  max-width: 400px;
+  width: 100%;
+  z-index: 1;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .login-container label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 7px;
+  color: #000000;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .login-container .input-group {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .login-container .input-group i {
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  z-index: 9;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #a6a6a6;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .login-container .input-group input {
+  outline: none;
+  border: none;
+  width: 302px;
+  height: 36px;
+  background-color: #ffffff;
+  border: 1px solid #d6d6d6;
+  color: #373737;
+  border-radius: 3px;
+  padding: 5px 10px 5px 35px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .forgot-password {
+  margin-top: -4px;
+  margin-bottom: 8px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .forgot-password a {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .forgot-password a:hover {
+  font-weight: 500;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .btn-submit {
+  background: #21beff;
+  border-radius: 3px;
+  width: 302px;
+  height: 36px;
+  border: none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #ffffff;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .btn-submit:hover {
+  background: #0a90c7;
+  color: #ffffff;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .note_rule_register {
+  width: 90%;
+  margin-top: 12px;
+  margin-bottom: 3px;
+  font-size: 11px;
+  line-height: 13px;
+  color: #575757;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login {
+  width: 93.5%;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login hr {
+  margin: 22px 0 15px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login .text-other-login {
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #575757;
+  background: white;
+  width: 42%;
+  margin: -23px auto -6px auto;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login .list-login {
+  margin-bottom: 6px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login .list-login .login-fplus {
+  background: #4267b2;
+  border: #4267b2;
+  margin: 0;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login .list-login .login-gplus {
+  background: #e02f2f;
+  border: #e02f2f;
+  margin: 12px 0 0 0;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login .list-login a {
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  padding-top: 10px;
+  height: 36px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login .list-login a span {
+  float: left;
+  width: 35px;
+  margin-left: -8px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  height: 22px;
+  margin-top: -2px;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login .list-login a span i {
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+}
+.header-container .header-content .right-content .user .modal-dialog .modal-content .modal-footer {
+  border: none;
+}
+.header-container .header-content .right-content .profile {
+  position: relative;
+}
+.header-container .header-content .right-content .profile:hover .dropdown-menu {
+  display: block;
+}
+.header-container .header-content .right-content .profile .profile-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+.header-container .header-content .right-content .profile .profile-content .header-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.header-container .header-content .right-content .profile .profile-content .text-white {
+  text-decoration: none;
+  margin-left: 8px;
+}
+.header-container .header-content .right-content .profile .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+  right: -60px !important;
+  left: auto !important;
+  margin: 6px 0 0 !important;
+  width: 300px;
+  height: 264px;
+}
+.header-container .header-content .right-content .profile .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  right: 100px;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent white transparent;
+  z-index: 9999;
+}
+.header-container .header-content .right-content .profile .dropdown-menu .menu-login-head {
+  padding: 23px;
+  height: 116px;
+  border-bottom: 1px solid #dbdbdb;
+  margin-top: -15px;
+}
+.header-container .header-content .right-content .profile .dropdown-menu .menu-login-head .menu-login-wallet {
+  float: left;
+  margin-top: 10px;
+}
+.header-container .header-content .right-content .profile .dropdown-menu .menu-login-head .menu-login-wallet .wallet-item {
+  display: flex;
+}
+.header-container .header-content .right-content .profile .dropdown-menu .menu-login-head .menu-login-wallet .wallet-item .icon-wallet {
+  content: url("../assets/images/wallet.png");
+}
+.header-container .header-content .right-content .profile .dropdown-menu .menu-login-head .menu-login-wallet .wallet-item .icon-wallet-login {
+  min-width: 25px;
+}
+.header-container .header-content .right-content .profile .dropdown-menu .menu-login-head .menu-login-wallet .wallet-item .balance {
+  margin-left: 5px;
+  color: black;
+}
+.header-container .header-content .right-content .profile .dropdown-menu .menu-login-head .btn-recharge {
+  font-size: 14px;
+  float: right;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #5db8ec 0%, #2584e4 51%);
+}
+.header-container .header-content .right-content .profile .dropdown-menu .menu-login-head .btn-recharge:hover {
+  font-weight: 500;
+}
+.header-container .header-content .right-content .profile .dropdown-menu a {
+  text-decoration: none;
+  color: #000;
+}
+.header-container .header-content .right-content .profile .dropdown-menu a .drop-link-login {
+  padding: 15px;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #f5f5f5;
+}
+.header-container .header-content .right-content .profile .dropdown-menu a .drop-link-login:hover {
+  font-weight: 500;
+}
+.header-container .header-content .right-content .profile .dropdown-menu a .menu-logout {
+  padding: 15px;
+  background-color: blanchedalmond;
+}
+.header-container .header-content .right-content .profile .dropdown-menu a .menu-logout:hover {
   font-weight: 500;
 }
 .header-container .header-content .right-content .cart {
@@ -193,7 +524,7 @@ hr {
   font-size: 20px;
   color: #fff;
 }
-.header-container .header-content .right-content .cart p {
+.header-container .header-content .right-content .cart span {
   margin-left: 0.5rem;
   color: #fff;
   font-weight: 700;
@@ -210,7 +541,8 @@ hr {
   position: absolute;
   width: 560px;
   overflow-y: auto;
-  max-height: 400px;
+  height: 100%;
+  min-height: 180px;
   top: 50px;
   left: auto;
   right: -5px;
@@ -242,6 +574,26 @@ hr {
   height: 36px;
   text-align: center;
   color: black;
+  padding: 0 10px;
+}
+.header-container .header-content .right-content .cart .dropdown-cart .cart-item tr {
+  background-color: #eeeeee6b;
+}
+.header-container .header-content .right-content .cart .dropdown-cart .cart-item tr td {
+  vertical-align: middle !important;
+  align-items: center !important;
+}
+.header-container .header-content .right-content .cart .dropdown-cart .cart-item tr td a {
+  text-decoration: none;
+  color: black;
+}
+.header-container .header-content .right-content .cart .dropdown-cart .cart-item tr td .text-remove {
+  color: #fd0909 !important;
+  vertical-align: middle;
+  font-size: 12px;
+}
+.header-container .header-content .right-content .cart .dropdown-cart .cart-item .check-out {
+  text-align: right;
 }
 
 .main-container {
@@ -314,7 +666,7 @@ hr {
   border-radius: 4px;
 }
 .main-container .main-content .banner .banner-content .menu-catalog .left-menu .nav-menu ul li {
-  padding: 12px 8px;
+  padding: 8px;
 }
 .main-container .main-content .banner .banner-content .menu-catalog .left-menu .nav-menu ul li a {
   color: #000;
@@ -413,6 +765,7 @@ hr {
 .main-container .main-content .product .list-container .service .item-frames .item-wrapper .item-info .item-title {
   text-transform: unset;
   color: #000;
+  font-weight: 500;
   margin-bottom: 10px;
   text-align: center;
   min-height: 42px;
