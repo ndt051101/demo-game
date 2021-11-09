@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
@@ -29,366 +30,11 @@
   </head>
   <body>
     <!-- Header -->
-
-    <header class="header-container">
-      <!-- Logo -->
-      <div class="header-content">
-        <div class="left-content">
-          <img src="../assets/images/logo.png" alt="logo" class="logo" />
-        </div>
-        <!-- Search -->
-        <div class="center-content">
-          <div class="search">
-            <input type="text" placeholder="Nhập sản phẩm cần tìm" />
-            <button class="btn-search">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-        <!-- Login -->
-        <div class="right-content">
-          <!-- Login -->
-          <!-- <div class="user">
-            <div class="logo">
-              <i class="fas fa-user"></i>
-            </div>
-            <span>Đăng nhập</span>
-            <div class="dropdown-user">
-              <button
-                type="button"
-                class="btn btn-warning w-100 user-item"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="login"
-              >
-                Đăng nhập
-              </button>
-              <button
-                type="button"
-                class="btn btn-warning w-100 user-item"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="register"
-              >
-                Tạo tài khoản
-              </button>
-              <button class="btn btn-primary user-item w-100">
-                <i class="fab fa-facebook-f"></i>
-                <span>Đăng nhập facebook</span>
-              </button>
-              <button class="btn btn-danger user-item w-100">
-                <i class="fab fa-google-plus-g"></i>
-                <span>Đăng nhập google</span>
-              </button>
-            </div>
-
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="tab-login">
-                      <div class="login-info">
-                        <div class="title-login">Đăng nhập</div>
-                        <p>
-                          Đăng nhập để theo dõi đơn hàng, lưu danh sách sản phẩm
-                          yêu thích, nhận nhiều ưu đãi hấp dẫn.
-                        </p>
-                        <div class="image-login">
-                          <img src="../assets/images/login1.png" alt="login1" />
-                        </div>
-                      </div>
-                      <div class="content-login">
-                        <div class="nav-header-login">
-                          <div
-                            class="nav-title active open_login_mini"
-                            id="login"
-                          >
-                            Đăng nhập
-                          </div>
-                          <div
-                            class="nav-title open_register_mini"
-                            id="register"
-                          >
-                            Tạo tài khoản
-                          </div>
-                        </div>
-                        <div class="form-login">
-                          <div class="login-container">
-                            <label for="">Địa chỉ Email</label>
-                            <div class="input-group">
-                              <i class="far fa-envelope"></i>
-                              <input
-                                type="text"
-                                name="email"
-                                value=""
-                                placeholder="Nhập địa chỉ Email"
-                                id="input-email-login"
-                                class="input-login"
-                              />
-                            </div>
-                          </div>
-                          <div class="login-container">
-                            <label for="">Mật khẩu</label>
-                            <div class="input-group">
-                              <i class="fas fa-lock"></i>
-                              <input
-                                type="password"
-                                name="password"
-                                value=""
-                                placeholder="Nhập mật khẩu"
-                                id="input-password-login"
-                                class="input-login"
-                              />
-                            </div>
-                          </div>
-                          <div class="forgot-password">
-                            <a href="#"> Bạn quên mật khẩu? </a>
-                          </div>
-                          <button
-                            type="button"
-                            id="btn-login"
-                            class="btn-submit"
-                          >
-                            Đăng nhập
-                          </button>
-                          <div class="other-login">
-                            <hr />
-                            <div class="text-other-login">
-                              Hoặc đăng nhập qua
-                            </div>
-
-                            <br />
-                            <div class="list-login">
-                              <a href="#" class="login-fplus btn btn-info">
-                                <span>
-                                  <i class="fab fa-facebook-f"></i>
-                                </span>
-                                Đăng nhập bằng Facebook
-                              </a>
-
-                              <a href="#" class="login-gplus btn btn-danger">
-                                <span>
-                                  <i class="fab fa-google-plus-g"></i>
-                                </span>
-                                Đăng nhập bằng Google
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-register">
-                      <div class="container-register">
-                        <div class="login-info">
-                          <div class="title-login">Tạo tài khoản</div>
-                          <p>
-                            Tạo tài khoản để theo dõi đơn hàng, lưu danh sách
-                            sản phẩm yêu thích, nhận nhiều ưu đãi hấp dẫn.
-                          </p>
-                          <div class="image-login">
-                            <img src="../assets/images/login2.png" alt="" />
-                          </div>
-                        </div>
-                        <div class="content-login">
-                          <div class="nav-header-login">
-                            <div class="nav-title open_login_mini" id="login">
-                              Đăng nhập
-                            </div>
-                            <div
-                              class="nav-title active open_register_mini"
-                              id="register"
-                            >
-                              Tạo tài khoản
-                            </div>
-                          </div>
-                          <div class="form-login">
-                            <div class="login-container">
-                              <label for="">Họ và tên</label>
-                              <div class="input-group">
-                                <i class="far fa-address-card"></i>
-                                <input
-                                  type="text"
-                                  name="name"
-                                  value=""
-                                  placeholder="Nhập họ và tên"
-                                  id="input-name-login"
-                                  class="input-login"
-                                />
-                              </div>
-                            </div>
-                            <div class="login-container">
-                              <label for="">Tên người dùng</label>
-                              <div class="input-group">
-                                <i class="far fa-user"></i>
-                                <input
-                                  type="text"
-                                  name="username_register"
-                                  value=""
-                                  placeholder="Nhập tên người dùng"
-                                  id="input-username-login"
-                                  class="input-login"
-                                />
-                              </div>
-                            </div>
-                            <div class="login-container">
-                              <label for="">Địa chỉ Email</label>
-                              <div class="input-group">
-                                <i class="far fa-envelope"></i>
-                                <input
-                                  type="text"
-                                  name="email_register"
-                                  value=""
-                                  placeholder="Nhập địa chỉ Email"
-                                  id="input-email-register"
-                                  class="input-login"
-                                />
-                              </div>
-                            </div>
-                            <div class="login-container">
-                              <label for="">Mật khẩu</label>
-                              <div class="input-group">
-                                <i class="fas fa-lock"></i>
-                                <input
-                                  type="password"
-                                  name="password_register"
-                                  value=""
-                                  placeholder="Nhập mật khẩu"
-                                  id="input-password-register"
-                                  class="input-login"
-                                />
-                              </div>
-                            </div>
-                            <button
-                              type="button"
-                              id="btn-login"
-                              class="btn-submit"
-                            >
-                              Đăng nhập
-                            </button>
-                            <div class="note_rule_register">
-                              Khi bạn nhấn Tạo tài khoản, bạn đã đồng ý thực
-                              hiện mọi giao dịch theo điều kiện sử dụng và chính
-                              sách của Divine Shop.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer"></div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- Profile-User -->
-          <div class="profile">
-            <div class="profile-content">
-              <div class="avatar">
-              <a href="#">
-              <img class="header-avatar" src="../assets/images/avt.png" alt="avt">
-            </a>
-          </div>
-          <a href="#" class="text-white">Tiendn</a>
-            </div>
-            <div class="dropdown-menu">
-              <div class="menu-login-head">
-                <b>SỐ DƯ TÀI KHOẢN</b>
-                <br>
-                <div class="menu-login-wallet">
-                  <div class="wallet-item">
-                    <i class="icon-wallet icon-wallet-login"></i>
-                    <div class="balance">Số dư: 0 
-                      <i class="fas fa-dollar-sign"></i>
-                    </div>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-recharge">NẠP THÊM</a>
-              </div>
-              <a href="#">
-                <div class="drop-link-login">
-                  Lịch sử mua hàng
-                </div>
-              </a>
-              <a href="#">
-                <div class="drop-link-login">
-                  Thông tin tài khoản
-                </div>
-              </a>
-              <a href="#">
-                <div class="menu-logout">
-                  Đăng xuất
-                </div>
-              </a>
-            </div>
-          </div>
-          <!-- Cart -->
-          <div class="cart">
-            <div class="logo">
-              <i class="fas fa-shopping-cart"></i>
-            </div>
-            <span>Giỏ hàng</span>
-            <span class="quantity">0</span>
-            <ul class="dropdown-cart">
-              <div class="text-cart">Giỏ hàng hiện tại</div>
-              <!-- <li class="cart-item">Không có sản phẩm trong giỏ hàng!</li> -->
-              <li class="cart-item">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <td class="text-left">
-                        <a href="#">PlayerUnknown's Batt...</a>
-                      </td>
-                      <td class="text-right">
-                        <i>Số lượng: 1</i>
-                      </td>
-                      <td class="text-right">299,000 VNĐ</td>
-                      <td class="text-center">
-                        <button type="button" title="Loại bỏ" class="btn">
-                          <i class="fa fa-times text-remove"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p class="check-out">
-                    <a
-                      class="btn btn-primary"
-                      style="
-                        color: #fff;
-                        width: 50%;
-                        padding: 6px 30px 6px 30px;
-                        background-image: linear-gradient(
-                          to right,
-                          #5db8ec 0%,
-                          #2584e4 51%
-                        ) !important;
-                      "
-                      href="#"
-                    >
-                      <i class="fa fa-wallet"></i>
-                      Thanh toán
-                    </a>
-                  </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
+    <header
+      class="header-container"
+      include-html="components/header.html"
+      id="header"
+    ></header>
 
     <!-- Main -->
 
@@ -491,7 +137,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -516,7 +162,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -541,7 +187,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -566,7 +212,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -591,7 +237,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -616,7 +262,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -641,7 +287,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -666,7 +312,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -704,7 +350,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -729,7 +375,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -754,7 +400,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -779,7 +425,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -804,7 +450,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -829,7 +475,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -854,7 +500,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -879,7 +525,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1018,7 +664,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1043,7 +689,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1068,7 +714,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1093,7 +739,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1118,7 +764,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1143,7 +789,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1168,7 +814,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1193,7 +839,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1231,7 +877,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1256,7 +902,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1281,7 +927,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1306,7 +952,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1331,7 +977,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1356,7 +1002,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1381,7 +1027,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1406,7 +1052,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1444,7 +1090,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1469,7 +1115,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1494,7 +1140,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1519,7 +1165,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1544,7 +1190,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1569,7 +1215,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1594,7 +1240,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1619,7 +1265,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1657,7 +1303,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1682,7 +1328,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1707,7 +1353,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1732,7 +1378,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1757,7 +1403,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1782,7 +1428,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1807,7 +1453,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1832,7 +1478,7 @@
               <div class="item-frames">
                 <div class="item-wrapper">
                   <a href="#">
-                    <img src="../assets/images/pd1.jpg" alt="product" />
+                    <img class="img-product" src="../assets/images/pd1.jpg" alt="product" />
                   </a>
                   <div class="item-info">
                     <a href="#">
@@ -1879,98 +1525,80 @@
             </div>
           </div>
         </div>
+
+        <!-- Recharge -->
+        <div class="recharge-container">
+          <div class="img"></div>
+          <div class="account-title">
+            <div class="account-img">
+              <img src="../assets/images/user.png" alt="user" />
+            </div>
+            <div class="account-name">
+              <div class="full-name">Nguyễn Duy Tiến</div>
+              <div class="account-balance">
+                Số dư hiện tại:
+                <span
+                  >0 <i class="fas fa-dollar-sign" style="color: #fff"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="account-info">
+            <div class="account-info-item">
+              Username:
+              <span>tiendn2k1</span>
+            </div>
+            <div class="account-info-item">
+              Ngày đăng kí: <span>28-09-2021</span>
+            </div>
+            <div class="account-info-item"><span>Member</span></div>
+            <div class="account-info-item">
+              Đã tích lũy: <span>0 <i class="fas fa-dollar-sign"></i></span>
+            </div>
+          </div>
+
+          <div class="account-body">
+            <span class="gradient-text">Nạp tiền vào tài khoản</span>
+            <div class="panel-body">
+              <label class="col-sm-2 label" for="input-coin"
+                >Nhập số Coin:</label
+              >
+              <div class="col-sm-10" style="float: right">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    name="amount"
+                    id="amount"
+                    placeholder="Vui lòng nhập số Coin"
+                    class="form-control format_amount"
+                  />
+                  <span class="input-group-btn">
+                    <button
+                      class="btn btn-primary"
+                      id="button-qrcode"
+                      onClick="roleUser()"
+                    >
+                      Nạp Tiền
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Footer -->
 
-        <footer class="footer-container">
-          <div class="footer-top">
-            <div class="container">
-              <div class="content">
-                <div class="item">
-                  <div class="img">
-                    <img src="../assets/images/img1.png" alt="" />
-                  </div>
-                  <div class="desc">
-                    <span>GIAO HÀNG SIÊU TỐC</span>
-                    <p>Hệ thống giao hàng tự động chỉ trong 3 phút</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="img">
-                    <img src="../assets/images/img2.png" alt="" />
-                  </div>
-                  <div class="desc">
-                    <span>BẢO HÀNH LÂU DÀI</span>
-                    <p>
-                      Mọi yêu cầu hỗ trợ sẽ được đội ngũ tư vấn giải quyết trực
-                      tiếp.
-                    </p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="img">
-                    <img src="../assets/images/img3.png" alt="" />
-                  </div>
-                  <div class="desc">
-                    <span>UY TÍN 5 SAO</span>
-                    <p>Được cộng đồng bình chọn là shop game uy tín nhất VN</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="img">
-                    <img src="../assets/images/img4.png" alt="" />
-                  </div>
-                  <div class="desc">
-                    <span>HỖ TRỢ TẬN TÌNH</span>
-                    <p>Hệ thống hỗ trợ online liên tục từ 8h - 24h</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-body">
-            <div class="container">
-              <div class="content">
-                <div class="item">
-                  <div class="paragraph">DIVINESHOP</div>
-                  <ul>
-                    <li><a href="#">Game bản quyền là gì?</a></li>
-                    <li><a href="#">Giới thiệu Divine Shop</a></li>
-                    <li><a href="#">Điều khoản dịch vụ</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                    <li><a href="#">Donate nhân viên CSKH</a></li>
-                  </ul>
-                </div>
-                <div class="item">
-                  <div class="paragraph">TÀI KHOẢN</div>
-                  <ul>
-                    <li><a href="#">Giỏ hàng</a></li>
-                    <li><a href="#">Đăng kí</a></li>
-                    <li><a href="#">Đăng nhập</a></li>
-                    <li><a href="#">Sản phẩm đã mua</a></li>
-                    <li><a href="#">Chế độ bảo hành</a></li>
-                  </ul>
-                </div>
-                <div class="item">
-                  <div class="paragraph">LIÊN HỆ</div>
-                  <ul>
-                    <li><a href="#">Địa chỉ giao dịch trực tiếp</a></li>
-                    <li>
-                      Hotline:
-                      <a href="#">1900 633 305</a>
-                      (8:00 - 24:00)
-                    </li>
-                    <li>Email: hotro@divineshop.vn</li>
-                    <li><a href="#">Fanpage</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <footer
+          class="footer-container"
+          include-html="components/footer.html"
+          id="footer"
+        ></footer>
       </div>
     </section>
 
-    <script src="main.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/include-html.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

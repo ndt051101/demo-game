@@ -1,0 +1,377 @@
+<!-- Logo -->
+<div class="header-content">
+  <div class="left-content">
+    <a href="index.html">
+      <img src="../assets/images/logo.png" alt="logo" class="logo" />
+    </a>
+    
+  </div>
+  <!-- Search -->
+  <div class="center-content">
+    <div class="search">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm" />
+      <button class="btn-search">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Login -->
+  <div class="right-content">
+    <!-- Login -->
+    <div class="user" id="user">
+      <div class="logo">
+        <i class="fas fa-user"></i>
+      </div>
+      <span>Đăng nhập</span>
+      <div class="dropdown-user">
+        <button
+          type="button"
+          class="btn btn-warning w-100 user-item"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          data-bs-whatever="login"
+        >
+          Đăng nhập
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning w-100 user-item"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          data-bs-whatever="register"
+        >
+          Tạo tài khoản
+        </button>
+        <button class="btn btn-primary user-item w-100">
+          <i class="fab fa-facebook-f"></i>
+          <span>Đăng nhập facebook</span>
+        </button>
+        <button class="btn btn-danger user-item w-100">
+          <i class="fab fa-google-plus-g"></i>
+          <span>Đăng nhập google</span>
+        </button>
+      </div>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="tab-login">
+                <div class="login-info">
+                  <div class="title-login">Đăng nhập</div>
+                  <p>
+                    Đăng nhập để theo dõi đơn hàng, lưu danh sách sản phẩm yêu
+                    thích, nhận nhiều ưu đãi hấp dẫn.
+                  </p>
+                  <div class="image-login">
+                    <img src="../assets/images/login1.png" alt="login1" />
+                  </div>
+                </div>
+                <div class="content-login">
+                  <div class="nav-header-login">
+                    <div class="nav-title active open_login_mini" id="login">
+                      Đăng nhập
+                    </div>
+                    <div class="nav-title open_register_mini" id="register">
+                      Tạo tài khoản
+                    </div>
+                  </div>
+                  <div class="form-login">
+                    <div class="login-container">
+                      <label for="">Tài khoản</label>
+                      <div class="input-group">
+                        <i class="far fa-envelope"></i>
+                        <input
+                          type="text"
+                          name="email"
+                          value=""
+                          placeholder="Nhập tài khoản"
+                          id="input-username-login"
+                          class="input-login"
+                        />
+                      </div>
+                    </div>
+                    <div class="login-container">
+                      <label for="">Mật khẩu</label>
+                      <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input
+                          type="password"
+                          name="password"
+                          value=""
+                          placeholder="Nhập mật khẩu"
+                          id="input-password-login"
+                          class="input-login"
+                        />
+                      </div>
+                    </div>
+                    <div class="forgot-password">
+                      <a href="#"> Bạn quên mật khẩu? </a>
+                    </div>
+                    <button
+                      type="button"
+                      id="btn-login"
+                      class="btn-submit"
+                      onclick="login()"
+                    >
+                      Đăng nhập
+                    </button>
+                    <div class="other-login">
+                      <hr />
+                      <div class="text-other-login">Hoặc đăng nhập qua</div>
+
+                      <br />
+                      <div class="list-login">
+                        <a href="#" class="login-fplus btn btn-info">
+                          <span>
+                            <i class="fab fa-facebook-f"></i>
+                          </span>
+                          Đăng nhập bằng Facebook
+                        </a>
+
+                        <a href="#" class="login-gplus btn btn-danger">
+                          <span>
+                            <i class="fab fa-google-plus-g"></i>
+                          </span>
+                          Đăng nhập bằng Google
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-register">
+                <div class="container-register">
+                  <div class="login-info">
+                    <div class="title-login">Tạo tài khoản</div>
+                    <p>
+                      Tạo tài khoản để theo dõi đơn hàng, lưu danh sách sản phẩm
+                      yêu thích, nhận nhiều ưu đãi hấp dẫn.
+                    </p>
+                    <div class="image-login">
+                      <img src="../assets/images/login2.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="content-login">
+                    <div class="nav-header-login">
+                      <div class="nav-title open_login_mini" id="login">
+                        Đăng nhập
+                      </div>
+                      <div
+                        class="nav-title active open_register_mini"
+                        id="register"
+                      >
+                        Tạo tài khoản
+                      </div>
+                    </div>
+                    <div class="form-login">
+                      <div class="login-container">
+                        <label for="">Họ và tên</label>
+                        <div class="input-group">
+                          <i class="far fa-address-card"></i>
+                          <input
+                            type="text"
+                            name="name"
+                            value=""
+                            placeholder="Nhập họ và tên"
+                            id="input-name-register"
+                            class="input-login"
+                          />
+                        </div>
+                      </div>
+                      <div class="login-container">
+                        <label for="">Tài khoản</label>
+                        <div class="input-group">
+                          <i class="far fa-user"></i>
+                          <input
+                            type="text"
+                            name="username_register"
+                            value=""
+                            placeholder="Nhập tên người dùng"
+                            id="input-username-register"
+                            class="input-login"
+                          />
+                        </div>
+                      </div>
+                      <div class="login-container">
+                        <label for="">Địa chỉ Email</label>
+                        <div class="input-group">
+                          <i class="far fa-envelope"></i>
+                          <input
+                            type="text"
+                            name="email_register"
+                            value=""
+                            placeholder="Nhập địa chỉ Email"
+                            id="input-email-register"
+                            class="input-login"
+                          />
+                        </div>
+                      </div>
+                      <div class="login-container">
+                        <label for="">Mật khẩu</label>
+                        <div class="input-group">
+                          <i class="fas fa-lock"></i>
+                          <input
+                            type="password"
+                            name="password_register"
+                            value=""
+                            placeholder="Nhập mật khẩu"
+                            id="input-password-register"
+                            class="input-login"
+                          />
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        id="btn-login"
+                        class="btn-submit"
+                        onClick="register()"
+                      >
+                        Đăng kí
+                      </button>
+                      <div class="note_rule_register">
+                        Khi bạn nhấn Tạo tài khoản, bạn đã đồng ý thực hiện mọi
+                        giao dịch theo điều kiện sử dụng và chính sách của
+                        Divine Shop.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile-User -->
+    <div class="profile" id="profile">
+      <div class="profile-content">
+        <div class="avatar">
+          <a href="#">
+            <img
+              class="header-avatar"
+              src="../assets/images/avt.png"
+              alt="avt"
+            />
+          </a>
+        </div>
+        <a href="#" class="text-white"></a>
+      </div>
+      <div class="dropdown-menu">
+        <div class="menu-login-head">
+          <b>SỐ DƯ TÀI KHOẢN</b>
+          <br />
+          <div class="menu-login-wallet">
+            <div class="wallet-item">
+              <i class="icon-wallet icon-wallet-login"></i>
+              <div class="balance">
+                Số dư: 0
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn btn-recharge" onclick="rechargeClick()">NẠP THÊM</a>
+        </div>
+        <a href="#">
+          <div class="drop-link-login">Lịch sử mua hàng</div>
+        </a>
+        <a href="#">
+          <div class="drop-link-login">Thông tin tài khoản</div>
+        </a>
+        <a href="#">
+          <div class="menu-logout" onclick="logout()">Đăng xuất</div>
+        </a>
+      </div>
+    </div>
+    <!-- Cart -->
+    <div class="cart">
+      <div class="logo">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+      <span>Giỏ hàng</span>
+      <span class="quantity">0</span>
+      <ul class="dropdown-cart">
+        <div class="text-cart">Giỏ hàng hiện tại</div>
+        <!-- <li class="cart-item">Không có sản phẩm trong giỏ hàng!</li> -->
+        <li class="cart-item">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="text-left">
+                  <a href="#">PlayerUnknown's Batt...</a>
+                </td>
+                <td class="text-right">
+                  <i>Số lượng: 1</i>
+                </td>
+                <td class="text-right">299,000 VNĐ</td>
+                <td class="text-center">
+                  <button type="button" title="Loại bỏ" class="btn">
+                    <i class="fa fa-times text-remove"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="check-out">
+            <a
+              class="btn btn-primary"
+              style="
+                color: #fff;
+                width: 50%;
+                padding: 6px 30px 6px 30px;
+                background-image: linear-gradient(
+                  to right,
+                  #5db8ec 0%,
+                  #2584e4 51%
+                ) !important;
+              "
+              href="#"
+            >
+              <i class="fa fa-wallet"></i>
+              Thanh toán
+            </a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  const exampleModal = document.getElementById("exampleModal");
+  const tab_login = document.querySelector(".tab-login");
+  const tab_register = document.querySelector(".tab-register");
+  exampleModal.addEventListener("show.bs.modal", function (event) {
+    const button = event.relatedTarget;
+    const recipient = button.getAttribute("data-bs-whatever");
+    if (recipient === "login") {
+      tab_register.style.display = "none";
+      tab_login.style.display = "unset";
+    }
+    if (recipient === "register") {
+      tab_register.style.display = "unset";
+      tab_login.style.display = "none";
+    }
+  });
+  $("#user").show();
+  $("#profile").hide();
+</script>
