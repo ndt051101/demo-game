@@ -16,34 +16,46 @@ function carousel() {
 }
 
 function register() {
+  var name = $("#input-name-register").val();
+  var email =  $("#input-email-register").val();
+  var username = $("#input-username-register").val();
+  var password = $("#input-password-register").val();
+  if(name == "" || email == "" || username == "" || password == ""){
+    alert("Vui lòng điền đủ thông tin!");
+    return;
+  }
   $.ajax({
     url: "http://localhost:8000/api/register",
     type: "POST",
     dataType: "json",
     data: {
-      name: $("#input-name-register").val(),
-      email: $("#input-email-register").val(),
-      username: $("#input-username-register").val(),
-      password: $("#input-password-register").val(),
-    },
-    success: function () {
+      name: name,
+      email: email,
+      username: username,
+      password: password,
+    }
+  })
+  .then((data) => {
+    console.log(data.status);
+    if (data.status) {
+      alert("Tạo tài khoản thành công");
+
       $("#exampleModal").modal("show");
       setTimeout(function () {
         $("#exampleModal").modal("hide");
-      }, 2000);
-    },
-  })
-    .then((data) => {
-      console.log(data.status);
-      if (data.status) {
-        alert(data.message);
-      } else {
-        alert(data.message);
+      }, 500);
+    } else {
+      if(data.message == "Username or email already exists"){
+        alert("Tài khoản hoặc email đã tồn tại!");
       }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      else{
+        alert("Có lỗi!");
+      }
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 }
 
 $(".recharge-container").hide();
@@ -56,26 +68,35 @@ function login() {
     data: {
       username: $("#input-username-login").val(),
       password: $("#input-password-login").val(),
-    },
-    success: function () {
+    }
+  })
+  .then((data) => {
+    console.log(data);
+    if (data.status) {
+      window.localStorage.setItem("token", data.token);
+      $("#user").hide();
+      $("#profile").show();
+      $(".text-white").html(data.profile.name);
+      $(".balance").html("Số dư: " + data.profile.coin + ` <i class="fas fa-dollar-sign"></i>`);
+
       $("#exampleModal").modal("show");
       setTimeout(function () {
         $("#exampleModal").modal("hide");
-      }, 2000);
-    },
-  })
-    .then((data) => {
-      if (data.status) {
-        window.localStorage.setItem("token", data.token);
-        $("#user").hide();
-        $("#profile").show();
-        $(".text-white").html(data.profile.username);
+      }, 500);
+    }
+    else{
+      if(data.message == "Invalid Username or Password"){
+        alert("Tài khoản hoặc mật khẩu không đúng!");
       }
-      console.log(data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      else{
+        alert("Có lỗi!");
+      }
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+    alert("Có lỗi!");
+  });
 }
 
 function logout() {
@@ -107,12 +128,13 @@ const checkToken = (token) => {
     },
   })
     .then((data) => {
+      console.log(data);
       if (data.status) {
         $("#user").hide();
         $("#profile").show();
-        $(".text-white").html(data.profile.username);
+        $(".text-white").html(data.profile.name);
+        $(".balance").html("Số dư: " + data.profile.coin + ` <i class="fas fa-dollar-sign"></i>`);
       }
-      console.log(data);
     })
     .catch((error) => {
       console.log(error);
@@ -124,29 +146,46 @@ if (retrievedObject != null) {
   checkToken(retrievedObject);
 }
 
-const rechargeClick = () => {
-  $(".btn-recharge").click(function () {
-    $(".recharge-container").show();
+function rechargeClick(){
     $(".banner").hide();
     $("hr").hide();
     $(".product").hide();
     $(".line-container").hide();
-  });
+    $(".recharge-container").show();
 }
 
-function roleUser() {
+
+function recharge() {
   const token = localStorage.getItem("token");
+  var coin = $("#amount").val()
+  if(coin == 0){
+    alert("Vui lòng nhập số tiền cần nạp!")
+    return
+  }
   $.ajax({
     url: "http://localhost:8000/api/recharge",
     type: "POST",
     dataType: "json",
     data: {
       token: token,
-      coin: $("#amount").val(),
+      coin: coin,
     },
   })
     .then((data) => {
-      console.log(data);
+      if(data.status){
+        $("#chuyenkhoan").html(`<p style="color: red;">Chuyển tiền đến tài khoản: BIDV - Nguyễn Duy Tiến - 45210000558354</p><p style="color: red;">Nội dung chuyển khoản: ${ data.code }</p>`)
+      }
+      else{
+        if(data.message === 'Token is Invalid'){
+            window.location.href = "http://localhost/demo-game/src/index.html";
+        }
+        else if(data.message === 'Token is Expired'){
+            window.location.href = "http://localhost/demo-game/src/index.html";
+        }
+        else{
+            alert('Xảy ra lỗi!')
+        }
+      }
     })
     .catch((error) => {
       console.log(error);

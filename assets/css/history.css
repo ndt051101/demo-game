@@ -1,0 +1,18 @@
+
+.history{
+    max-width: 1000px;
+    min-height: 600px;
+    margin: 100px auto;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.row{
+    padding-top: 10px;
+    text-align: center;
+}
+.loginLabel{
+    font-family: "Arial";
+    font-size: 30px;
+    font-weight: bold;
+}
+
