@@ -1,6 +1,6 @@
 const checkToken = (token) => {
   $.ajax({
-    url: `http://localhost:8000/api/getrechargebyid?token=` + token,
+    url: `http://localhost:8000/api/bill?token=` + token,
     type: "GET",
     dataType: "json",
   })
@@ -14,14 +14,7 @@ const checkToken = (token) => {
           "Số dư: " + data.profile.coin + ` <i class="fas fa-dollar-sign"></i>`
         );
 
-        $("#content-table").html(`
-            <tr>
-                <td style="background-color: #e3e1e1;padding: 0.5rem; ";>2</td>
-                <td style="background-color: #f2f0f0; padding: 0.5rem;">1951561981322</td>
-                <td style="background-color: #e3e1e1; padding: 0.5rem;">50000</td>
-                <td style="background-color: #f2f0f0; padding: 0.5rem;">8:30:20 11/11/2021</td>
-                <td style="background-color: #e3e1e1; padding: 0.5rem;">Chờ xác nhận</td>
-            </tr>`);
+        $("#content-table").html(``);
         var item = ``;
         for (let i = 0; i < data.data.length; i++) {
           var utcDate = data.data[i].created_at;
@@ -44,22 +37,22 @@ const checkToken = (token) => {
                       i + 1
                     }</td>
                     <td style="background-color: #f2f0f0; padding: 0.5rem;">${
-                      data.data[i].recharge_code
+                      data.data[i].name
                     }</td>
                     <td style="background-color: #e3e1e1; padding: 0.5rem;">${
-                      data.data[i].coin
+                      data.data[i].total_coin
                     }</td>
-                    <td style="background-color: #f2f0f0; padding: 0.5rem;">${date}</td>`;
-
-          if (data.data[i].status == 0) {
-            item =
-              item +
-              `<td style="background-color: #e3e1e1">Chờ xác nhận</td></tr>`;
-          } else {
-            item =
-              item +
-              `<td style="background-color: #e3e1e1">Hoàn thành</td></tr>`;
-          }
+                    <td style="background-color: #f2f0f0; padding: 0.5rem;">${
+                      data.data[i].code_card == null ? '_______' : data.data[i].code_card
+                    }</td>
+                    <td style="background-color: #e3e1e1; padding: 0.5rem;">${
+                      data.data[i].account_game == null ? '_______' : data.data[i].account_game
+                    }</td>
+                    <td style="background-color: #f2f0f0; padding: 0.5rem;">${
+                      data.data[i].password_game == null ? '_______' : data.data[i].password_game
+                    }
+                    </td>
+                    <td style="background-color: #e3e1e1; padding: 0.5rem;">${date}</td>`;
         }
 
         $("#content-table").html(item);

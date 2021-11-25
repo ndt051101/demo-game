@@ -1,3 +1,5 @@
+import { run } from "./buy.js";
+
 const checkToken = (token) => {
   $.ajax({
     url: `http://localhost:8000/api/checktoken`,
@@ -22,6 +24,7 @@ const checkToken = (token) => {
       console.log(error);
     });
 };
+
 
 const retrievedObject = localStorage.getItem("token");
 if (retrievedObject != null) {
@@ -74,11 +77,14 @@ $(document).ready(function () {
                         <i class="fas fa-shopping-cart"></i>
                       </a>
                     </div>
-                    <div class="item-btn">Mua ngay</div>
+                    <div id="${item.id}" class="item-btn">Mua ngay</div>
                   </div>
                 </div>
               </div>
         `;
+        
+          $('body').on('click','#'+ item.id +'', run(item.id));
+
         });
         $(".service").html(listItem);
         $(".view-more").html("Tải thêm sản phẩm");
@@ -91,6 +97,7 @@ $(document).ready(function () {
       console.log(error);
     });
 });
+
 
 const clickPurchase = () => {
   $(".item-btn").click(function () {
