@@ -1,3 +1,5 @@
 /node_modules
 /src/style.scss
 /src/style.css.map
+/src/categories.scss
+/src/categories.css.map

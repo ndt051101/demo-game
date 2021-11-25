@@ -67,7 +67,7 @@ hr {
   height: 24px;
 }
 .header-container .header-content .center-content {
-  width: 40%;
+  width: 60%;
 }
 .header-container .header-content .center-content .search {
   margin: 20px auto;
@@ -105,9 +105,9 @@ hr {
   color: #fff;
 }
 .header-container .header-content .right-content {
-  width: 40%;
+  width: 20%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .header-container .header-content .right-content .user {
@@ -132,8 +132,8 @@ hr {
 }
 .header-container .header-content .right-content .user .dropdown-user {
   position: absolute;
-  top: 100%;
-  left: -78px;
+  top: 120%;
+  left: -99px;
   width: 250px;
   z-index: 1000;
   display: none;
@@ -151,7 +151,7 @@ hr {
 .header-container .header-content .right-content .user .dropdown-user::after {
   content: "";
   position: absolute;
-  left: 122px;
+  left: 138px;
   top: -8px;
   width: 0;
   height: 0;
@@ -441,7 +441,7 @@ hr {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
-  right: -60px !important;
+  right: -24px !important;
   left: auto !important;
   margin: 6px 0 0 !important;
   width: 300px;
@@ -450,7 +450,7 @@ hr {
 .header-container .header-content .right-content .profile .dropdown-menu::before {
   content: "";
   position: absolute;
-  right: 100px;
+  right: 70px;
   top: -10px;
   width: 0;
   height: 0;
@@ -694,6 +694,11 @@ hr {
   width: 100%;
   height: 100%;
   display: none;
+}
+.main-container .main-content .product {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .main-container .main-content .product .list-title {
   margin-bottom: 20px;
@@ -972,8 +977,18 @@ hr {
   text-decoration: none;
   font-weight: 700;
 }
-.main-container .main-content .line-container .container .text a:hover {
-  text-decoration: underline;
+.main-container .main-content .line-container .container .text a button {
+  background: transparent;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0;
+  text-transform: uppercase;
+}
+.main-container .main-content .line-container .container .text a button:hover {
+  color: #21beff;
 }
 .main-container .main-content .line-container .container a {
   color: #fff;
