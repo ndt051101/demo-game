@@ -329,6 +329,40 @@ const trendingProducts = () => {
     });
 }
 
+const confirm_ChangePassword = () => {
+    const token = localStorage.getItem("token");
+    var current_password = $("#current_password").val();
+    var new_password = $("#new_password").val();
+    if (current_password == "" || new_password == "") {
+        alert("Vui lòng điền đủ thông tin!");
+        return;
+    }
+    $.ajax({
+        url: "http://localhost:8000/api/changepassword",
+        type: "POST",
+        dataType: "json",
+        data: {
+            token: token,
+            current_password: current_password,
+            new_password: new_password
+        },
+    })
+    .then((data) => {
+    if (data.status) {
+        alert(data.message);
+        window.location.href = "http://localhost/demo-game/src/index.html";
+    } else {
+        if (data.message == "Mật khẩu hiện tại không chính xác") {
+            alert(data.message);
+        } else {
+            window.location.href = "http://localhost/demo-game/src/index.html";
+        }
+    }
+    })
+    .catch((error) => {
+    console.log(error);
+    });
+}
 
 
 $(document).ready(function () {

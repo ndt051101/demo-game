@@ -221,9 +221,9 @@
               <div class="col-sm-10" style="float: right">
                 <div class="input-group">
                   <input
-                    type="text"
+                    type="password"
                     name="amount"
-                    id="amount"
+                    id="current_password"
                     placeholder="Vui lòng nhập mật khẩu hiện tại"
                     class="form-control format_amount"
                   />
@@ -240,9 +240,9 @@
               <div class="col-sm-10" style="float: right">
                 <div class="input-group">
                   <input
-                    type="text"
+                    type="password"
                     name="amount"
-                    id="amount"
+                    id="new_password"
                     placeholder="Vui lòng nhập mật khẩu mưới"
                     class="form-control format_amount"
                   />
@@ -254,7 +254,7 @@
               <button
                 class="btn btn-primary"
                 id="button-qrcode"
-                onClick="recharge()"
+                onClick="confirm_ChangePassword()"
               >
                 Xác nhận
               </button>

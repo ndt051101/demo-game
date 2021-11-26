@@ -55,27 +55,27 @@ function register() {
         password: password,
         },
     })
-        .then((data) => {
-        console.log(data.status);
-        if (data.status) {
-            alert("Tạo tài khoản thành công");
-    
-            $("#exampleModal").modal("show");
-            setTimeout(function () {
-            $("#exampleModal").modal("hide");
-            }, 500);
+    .then((data) => {
+    console.log(data.status);
+    if (data.status) {
+        alert("Tạo tài khoản thành công");
+
+        $("#exampleModal").modal("show");
+        setTimeout(function () {
+        $("#exampleModal").modal("hide");
+        }, 500);
+    } else {
+        if (data.message == "Username or email already exists") {
+        alert("Tài khoản hoặc email đã tồn tại!");
         } else {
-            if (data.message == "Username or email already exists") {
-            alert("Tài khoản hoặc email đã tồn tại!");
-            } else {
-            alert("Có lỗi!");
-            }
+        alert("Có lỗi!");
         }
-        })
-        .catch((error) => {
-        console.log(error);
-        });
     }
+    })
+    .catch((error) => {
+    console.log(error);
+    });
+}
     
     $(".recharge-container").hide();
     $(".line-container").show();
