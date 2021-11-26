@@ -1,36 +1,5 @@
 import { run } from "./buy.js";
 
-const checkToken = (token) => {
-  $.ajax({
-    url: `http://localhost:8000/api/checktoken`,
-    type: "POST",
-    dataType: "json",
-    data: {
-      token: token,
-    },
-  })
-    .then((data) => {
-      console.log(data);
-      if (data.status) {
-        $("#user").hide();
-        $("#profile").show();
-        $(".text-white").html(data.profile.name);
-        $(".balance").html(
-          "Số dư: " + data.profile.coin + ` <i class="fas fa-dollar-sign"></i>`
-        );
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-
-const retrievedObject = localStorage.getItem("token");
-if (retrievedObject != null) {
-  checkToken(retrievedObject);
-}
-
 $(document).ready(function () {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const params = Object.fromEntries(urlSearchParams.entries());
@@ -82,7 +51,7 @@ $(document).ready(function () {
                 </div>
               </div>
         `;
-        
+          $('body').off('click','#'+ item.id +'');
           $('body').on('click','#'+ item.id +'', run(item.id));
 
         });
@@ -99,16 +68,3 @@ $(document).ready(function () {
 });
 
 
-const clickPurchase = () => {
-  $(".item-btn").click(function () {
-    alert("Click me");
-    // $.ajax({
-    //   url: "cart.php",
-    //   type: "POST",
-    //   data: { itemID: id },
-    //   success: function (data) {
-    //     // Do stuff when the AJAX call returns
-    //   },
-    // });
-  });
-};

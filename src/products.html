@@ -28,6 +28,104 @@
           crossorigin="anonymous"
         />
         <title>Sản phẩm</title>
+
+        <style>
+          .recharge-container {
+              height: 530px;
+              position: relative;
+              margin: 1rem 0;
+              border-radius: 2px;
+              overflow: hidden;
+            }
+            .recharge-container .img {
+              background-image: url("../images/banneruser.png");
+              background-position: center center;
+              background-size: cover;
+              height: 230px;
+              position: relative;
+            }
+            .recharge-container .account-title {
+              position: absolute;
+              top: 105px;
+              left: 40px;
+              display: flex;
+              align-items: center;
+            }
+            .recharge-container .account-title .account-img {
+              height: 150px;
+              width: 150px;
+              border-radius: 50%;
+              float: left;
+              padding: 3px;
+              background-color: #fff;
+              border: 1px solid #eee;
+            }
+            .recharge-container .account-title .account-img img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+            .recharge-container .account-title .account-name {
+              float: left;
+              margin-left: 15px;
+              margin-top: 30px;
+            }
+            .recharge-container .account-title .account-name .full-name {
+              font-size: 20px;
+              font-weight: 600;
+              text-transform: capitalize;
+            }
+            .recharge-container .account-title .account-name .account-balance {
+              font-size: 14px;
+              font-weight: 500;
+            }
+            .recharge-container .account-info {
+              background-color: #fff;
+              color: #000;
+              padding: 10px 0 10px 190px;
+              border: 1px solid #eee;
+            }
+            .recharge-container .account-info .account-info-item {
+              display: inline-block;
+              padding: 0 15px;
+            }
+            .recharge-container .account-info .account-info-item:not(:last-child) {
+              border-right: 1px solid #eee;
+            }
+            .recharge-container .account-info .account-info-item span {
+              font-weight: 500;
+              text-transform: capitalize;
+            }
+            .recharge-container .account-body {
+              width: 100%;
+              background-color: #fff;
+              padding: 85px 30px;
+              border: 1px solid #eee;
+            }
+            .recharge-container .account-body .gradient-text {
+              text-transform: uppercase;
+              font-size: 20px;
+              font-weight: 600;
+              background: linear-gradient(to right, #12c2e9 0%, #f64f5a 70%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            .recharge-container .account-body .panel-body {
+              padding: 1rem 0;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .recharge-container .account-body .panel-body .label {
+              display: inline-block;
+              max-width: 100%;
+              margin-bottom: 5px;
+              font-weight: 700;
+            }
+        </style>
+
       </head>
 <body>
     <!-- Header -->
@@ -83,10 +181,66 @@
     </div>
 
 
+    <!-- Recharge -->
+    <div class="recharge-container">
+      <div class="img"></div>
+      <div class="account-title">
+        <div class="account-img">
+          <img src="../assets/images/user.png" alt="user" />
+        </div>
+        <div class="account-name">
+          <div class="full-name">Nguyễn Duy Tiến</div>
+          <div class="account-balance">
+            Số dư hiện tại:
+            <span
+              >0 <i class="fas fa-dollar-sign" style="color: #fff"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+      <div class="account-info">
+        <div class="account-info-item">
+          Username:
+          <span>tiendn2k1</span>
+        </div>
+      </div>
+
+      <div class="account-body">
+        <span class="gradient-text">Nạp tiền vào tài khoản</span>
+        <div class="panel-body">
+          <label class="col-sm-2 label" for="input-coin"
+            >Nhập số Coin:</label
+          >
+          <div class="col-sm-10" style="float: right">
+            <div class="input-group">
+              <input
+                type="text"
+                name="amount"
+                id="amount"
+                placeholder="Vui lòng nhập số Coin"
+                class="form-control format_amount"
+              />
+              <span class="input-group-btn">
+                <button
+                  class="btn btn-primary"
+                  id="button-qrcode"
+                  onClick="recharge()"
+                >
+                  Nạp Tiền
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div id="chuyenkhoan"></div>
+      </div>
+    </div>
+
+
 
   
 </body>
-<script type="module" src="../assets/js/buy.js"></script>
+<!-- <script type="module" src="../assets/js/buy.js"></script> -->
 <script type="module" src="../assets/js/categories.js"></script>
 <script src="../assets/js/include-html.min.js"></script>
 <script

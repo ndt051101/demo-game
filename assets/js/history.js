@@ -34,7 +34,7 @@ const checkToken = (token) => {
             item +
             `<tr>
                     <td style="background-color: #e3e1e1; padding: 0.5rem;">${
-                      i + 1
+                      data.data[i].id
                     }</td>
                     <td style="background-color: #f2f0f0; padding: 0.5rem;">${
                       data.data[i].name
