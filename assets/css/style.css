@@ -1081,6 +1081,19 @@ hr {
   font-weight: 500;
   text-transform: capitalize;
 }
+.main-container .main-content .recharge-container .account-info .account-info-link {
+  margin: 0 2px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+}
+.main-container .main-content .recharge-container .account-info .account-info-link:not(:last-child) {
+  border-right: 1px solid #eee;
+}
+.main-container .main-content .recharge-container .account-info .account-info-link:hover {
+  color: #0d6efd;
+}
 .main-container .main-content .recharge-container .account-body {
   width: 100%;
   background-color: #fff;
@@ -1108,7 +1121,15 @@ hr {
   margin-bottom: 5px;
   font-weight: 700;
 }
-
+.main-container .main-content .recharge-container .account-body-pass {
+  max-width: 500px;
+  width: 100%;
+  margin: 70px auto;
+}
+.main-container .main-content .recharge-container .account-body-pass .panel-body {
+  margin-bottom: 1rem;
+  text-align: left;
+}
 .main-container .main-content .footer-container .footer-top {
   border-bottom: thin solid #b3b2b2;
   margin-top: 20px;
