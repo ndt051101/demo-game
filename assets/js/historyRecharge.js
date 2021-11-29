@@ -78,3 +78,5 @@ if (getToken != null) {
 } else {
   window.location.href = "http://localhost/demo-game/src/index.html";
 }
+
+

@@ -117,6 +117,15 @@ hr {
   align-items: center;
   cursor: pointer;
 }
+.header-container .header-content .right-content .user::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  width: 115px;
+  height: 20px;
+  background-color: transparent;
+}
 .header-container .header-content .right-content .user .logo {
   font-size: 20px;
   color: #fff;

@@ -473,3 +473,4 @@ $(document).ready(function () {
 // function run(product_id){
 //     return () => buyProduct(product_id);
 // }
+

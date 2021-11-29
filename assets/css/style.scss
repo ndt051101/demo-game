@@ -129,6 +129,16 @@ hr {
         align-items: center;
         cursor: pointer;
 
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0px;
+          top: 30px;
+          width: 115px;
+          height: 20px;
+          background-color: transparent;
+        }
+
         .logo {
           font-size: 20px;
           color: $white--color;
