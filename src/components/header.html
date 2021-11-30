@@ -86,7 +86,7 @@
                     <div class="nav-title active open_login_mini" id="login">
                       Đăng nhập
                     </div>
-                    <div class="nav-title open_register_mini" id="register">
+                    <div class="nav-title open_register_mini register-mini" id="register">
                       Tạo tài khoản
                     </div>
                   </div>
@@ -168,7 +168,7 @@
                   </div>
                   <div class="content-login">
                     <div class="nav-header-login">
-                      <div class="nav-title open_login_mini" id="login">
+                      <div class="nav-title open_login_mini  login-mini" id="login">
                         Đăng nhập
                       </div>
                       <div
@@ -302,60 +302,12 @@
         </a>
       </div>
     </div>
-    <!-- Cart -->
-    <!-- <div class="cart">
-      <div class="logo">
-        <i class="fas fa-shopping-cart"></i>
-      </div>
-      <span>Giỏ hàng</span>
-      <span class="quantity">0</span>
-      <ul class="dropdown-cart">
-        <div class="text-cart">Giỏ hàng hiện tại</div>
-        <li class="cart-item">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td class="text-left">
-                  <a href="#">PlayerUnknown's Batt...</a>
-                </td>
-                <td class="text-right">
-                  <i>Số lượng: 1</i>
-                </td>
-                <td class="text-right">299,000 VNĐ</td>
-                <td class="text-center">
-                  <button type="button" title="Loại bỏ" class="btn">
-                    <i class="fa fa-times text-remove"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="check-out">
-            <a
-              class="btn btn-primary"
-              style="
-                color: #fff;
-                width: 50%;
-                padding: 6px 30px 6px 30px;
-                background-image: linear-gradient(
-                  to right,
-                  #5db8ec 0%,
-                  #2584e4 51%
-                ) !important;
-              "
-              href="#"
-            >
-              <i class="fa fa-wallet"></i>
-              Thanh toán
-            </a>
-          </p>
-        </li>
-      </ul>
-    </div> -->
+    
   </div>
 </div>
 
-
+<script src="../../assets/js/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="../../assets/js/sweetalert2/sweet-alert.init.js"></script>
 <script src="../assets/js/header.js"></script>
 
 <script>
@@ -365,6 +317,7 @@
   exampleModal.addEventListener("show.bs.modal", function (event) {
     const button = event.relatedTarget;
     const recipient = button.getAttribute("data-bs-whatever");
+    console.log(recipient);
     if (recipient === "login") {
       tab_register.style.display = "none";
       tab_login.style.display = "unset";
@@ -374,6 +327,17 @@
       tab_login.style.display = "none";
     }
   });
+
+  $('.register-mini').on('click', function() {
+    tab_register.style.display = "unset";
+      tab_login.style.display = "none";
+  })
+
+  $('.login-mini').on('click', function() {
+    tab_register.style.display = "none";
+    tab_login.style.display = "unset";
+  })
+
   $("#user").show();
   $("#profile").hide();
 </script>

@@ -1,0 +1,23 @@
+{
+  "name": "demo-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch assets/css/style.scss -o assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndt051101/demo-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndt051101/demo-game/issues"
+  },
+  "homepage": "https://github.com/ndt051101/demo-game#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

@@ -201,7 +201,23 @@ function recharge() {
 }
 
 
-const searchProduct = () => {
+const searchProduct = () => { 
+    $(".banner").hide();
+    $("hr").hide();
+    $(window).on("load", function () {
+      // your logic here`enter code here`
+      $(".line-container").hide();
+    });
+    $(".line-container").hide();
+    $(".list-title").hide();
+    $(".search-title").html('Sản phẩm tìm kiếm');
+    $(".search-title").css({
+      "text-align": "center",
+      "font-size": "2rem",
+      "font-weight": "600",
+      "margin": "1rem 0"
+    });
+    $(".categories-container").hide();
     const input = $("#searchInput").val();
     $.ajax({
         url: `http://localhost:8000/api/search?product=${input}`,
@@ -266,41 +282,80 @@ const searchProduct = () => {
 };
 
 const buyProduct = (product_id) => {
-    var result = confirm("Bạn có muốn mua sản phẩm này!");
-    console.log(result);
-    if(result){
-        const token = localStorage.getItem("token");
-        if(token == null){
-            alert("Bạn phải đăng nhập để mua sản phẩm");
-            return;
+    swal.fire({
+        text: 'Bạn có muốn mua sản phẩm này!',
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No',
+        confirmButtonColor: "#DD6B55",
+    }).then((result) => {
+        if (result.value) {
+            const token = localStorage.getItem("token");
+            if(token == null){
+                Swal.fire({
+                    type: 'info',
+                    title: '',
+                    text: 'Bạn phải đăng nhập để mua sản phẩm',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                return;
+            }
+            $.ajax({
+                url: "http://localhost:8000/api/payment",
+                type: "POST",
+                data: {
+                    token: token,
+                    product_id: product_id,
+                },
+                dataType: "json",
+                success: function (data) {
+                    console.log(data)
+                    if (data.status) {
+                        Swal.fire({
+                            type: 'success',
+                            title: '',
+                            text: 'Mua thành công vui lòng kiểm tra sản phẩm của bạn trong phần lịch sử mua hàng!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                    else{
+                        if(data.message == "Token is Expired"){
+                            localStorage.removeItem('token')
+                            Swal.fire({
+                                type: 'info',
+                                title: '',
+                                text: 'Bạn phải đăng nhập để mua sản phẩm',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            // window.location.href = "http://127.0.0.1:5500/src/index.html";
+                        }
+                        else{
+                            Swal.fire({
+                                type: 'error',
+                                title: '',
+                                text: data.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    }
+                },
+                error: function(error){
+                    Swal.fire({
+                        type: 'error',
+                        title: '',
+                        text: 'Mua thất bại',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    console.log(error);
+                }
+            });
         }
-        $.ajax({
-            url: "http://localhost:8000/api/payment",
-            type: "POST",
-            data: {
-                token: token,
-                product_id: product_id,
-            },
-            dataType: "json",
-        })
-        .then((data) => {
-            console.log(data)
-            if (data.status) {
-                alert('Mua thành công vui lòng kiểm tra sản phẩm của bạn trong phần lịch sử mua hàng!');
-            }
-            else{
-                if(data.message.includes("Token")){
-                    window.location.href = "http://localhost/demo-game/src/index.html";
-                }
-                else{
-                    alert(data.message);
-                }
-            }
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    }
+    });
 }
 
 function run(product_id){

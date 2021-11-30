@@ -7,7 +7,7 @@
   width: 980px;
   height: 100%;
   margin: 0 auto;
-  background-color: transparent;
+  background-color: #fff;
   border-radius: 4px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -16,6 +16,11 @@
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+  padding: 0 20px;
+}
+
+.categories-container .categories-content::-webkit-scrollbar {
+  display: none;
 }
 .categories-container .categories-content .product {
   display: flex;
@@ -26,7 +31,7 @@
   margin: 20px 0;
   position: relative;
   font-size: 2rem;
-  color: #fff;
+  color: #000;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -218,6 +223,7 @@
   color: #fff;
   cursor: pointer;
   border: unset;
+  display: none;
 }
 .categories-container .categories-content .product .view-more:hover {
   color: #21beff;

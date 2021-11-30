@@ -2,19 +2,18 @@ let myIndex = 0;
 carousel();
 
 function carousel() {
-let i;
-const x = document.getElementsByClassName("mySlides");
-for (i = 0; i < x.length; i++) {
+  let i;
+  const x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
-}
-myIndex++;
-if (myIndex > x.length) {
+  }
+  myIndex++;
+  if (myIndex > x.length) {
     myIndex = 1;
+  }
+  x[myIndex - 1].style.display = "block";
+  setTimeout(carousel, 2000);
 }
-x[myIndex - 1].style.display = "block";
-setTimeout(carousel, 2000);
-}
-
 
 // const checkToken = (token) => {
 //     $.ajax({
@@ -45,8 +44,6 @@ setTimeout(carousel, 2000);
 // if (retrievedObject != null) {
 //     checkToken(retrievedObject);
 // }
-
-
 
 // function register() {
 // var name = $("#input-name-register").val();
@@ -202,56 +199,55 @@ setTimeout(carousel, 2000);
 //     });
 // }
 
-
 const fetchProducts = () => {
-    $.ajax({
-        url: "",
-        type: "GET",
-        dataType: "json",
-    })
+  $.ajax({
+    url: "",
+    type: "GET",
+    dataType: "json",
+  })
     .then((data) => {
-    if (data) {
+      if (data) {
         // $(".img-product").css("background-image", "url(" + data.image + ")");
         data.map((item, index) => {
-        $(".img-product").attr("src", `${item.image}`);
-        $(".item-title").html(item.name);
-        $(".old-price").html(item.price);
-        if (item.discount === 0) {
+          $(".img-product").attr("src", `${item.image}`);
+          $(".item-title").html(item.name);
+          $(".old-price").html(item.price);
+          if (item.discount === 0) {
             $(".current-price").hide();
-        } else {
+          } else {
             $(".current-price").html(
-            item.price - (item.price * item.discount) / 100
+              item.price - (item.price * item.discount) / 100
             );
             $(".discount-price").html(item.discount);
-        }
+          }
 
-        if (item.count === 0) {
+          if (item.count === 0) {
             $(".item-btn").html("Hết hàng");
             $(".item-btn").css("color", "red");
             $(".item-btn").css("border", "red");
-        } else {
+          } else {
             $(".item-btn").html("Mua ngay");
-        }
+          }
         });
-    }
-    console.log(data);
+      }
+      console.log(data);
     })
     .catch((error) => {
-    console.log(error);
+      // console.log(error);
     });
 };
-
+// fetchProducts()
 const categories = () => {
-    $.ajax({
-        url: `http://localhost:8000/api/categories`,
-        type: "GET",
-        dataType: "json",
-    })
+  $.ajax({
+    url: `http://localhost:8000/api/categories`,
+    type: "GET",
+    dataType: "json",
+  })
     .then((data) => {
-    if (data.message === "success") {
+      if (data.message === "success") {
         let listItem = "";
         data.data.map((item, index) => {
-        listItem += `
+          listItem += `
             <li>
             <a href="products.html?id=${item.id}">
                 <span class="category">${item.name}</span>
@@ -260,32 +256,33 @@ const categories = () => {
         `;
         });
         $(".categories-list").html(listItem);
-    }
+      }
     })
     .catch((error) => {
-    console.log(error);
+      console.log(error);
     });
-}
-
+};
 
 const trendingProducts = () => {
-    $.ajax({
-        url: 'http://localhost:8000/api/trending',
-        type: "GET",
-        dataType: "json",
-    })
+  $.ajax({
+    url: "http://localhost:8000/api/trending",
+    type: "GET",
+    dataType: "json",
+  })
     .then((data) => {
-    if (data && data.data.length > 0) {
+      if (data && data.data.length > 0) {
         let listItem = "";
         data.data.map((item, index) => {
-            let price = item.price - (item.price * item.discount) / 100;
-            listItem += `
+          let price = item.price - (item.price * item.discount) / 100;
+          listItem += `
                 <div class="item-frames" >
                     <div class="item-wrapper">
                     <a href="#">
                         <img
                         class="img-product"
-                        src="http://127.0.0.1:8080/storage/products/${item.image}"
+                        src="http://127.0.0.1:8080/storage/products/${
+                          item.image
+                        }"
                         alt="product"
                         />
                     </a>
@@ -297,11 +294,13 @@ const trendingProducts = () => {
                         <span class="current-price"> ${price}đ </span>
                         <span class="price-block">
                             <span class="old-price">${
-                            item.discount === 0 ? "" : item.price
+                              item.discount === 0 ? "" : item.price
                             }${item.discount === 0 ? "" : "đ"}</span>
                             <span class="discount-price">${
-                            item.discount === 0 ? "" : "-"
-                            }${item.discount === 0 ? "" : item.discount}${item.discount === 0 ? "" : "%"}</span>
+                              item.discount === 0 ? "" : "-"
+                            }${item.discount === 0 ? "" : item.discount}${
+            item.discount === 0 ? "" : "%"
+          }</span>
                         </span>
                         </div>
                         <div class="item-cart">
@@ -309,168 +308,89 @@ const trendingProducts = () => {
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                         </div>
-                        <div id="${item.product_id}" class="item-btn">Mua ngay</div>
+                        <div id="${
+                          item.product_id
+                        }" class="item-btn">Mua ngay</div>
                     </div>
                     </div>
                 </div>
             `;
-            $('body').off('click','#'+ item.product_id +'');
-            $('body').on('click','#'+ item.product_id +'', run(item.product_id));
+          $("body").off("click", "#" + item.product_id + "");
+          $("body").on(
+            "click",
+            "#" + item.product_id + "",
+            run(item.product_id)
+          );
         });
         $(".service").html(listItem);
         $(".view-more").html("Tải thêm sản phẩm");
-    } else {
+      } else {
         $(".view-more").html("Không có sản phẩm nào cả!");
-    }
-    console.log(data);
+      }
+      console.log(data);
     })
     .catch((error) => {
-    console.log(error);
+      console.log(error);
     });
-}
+};
+
+$("#current_password").on('input', function() {
+  $('.error-pass-current').text("")
+})
+
+$("#new_password").on('input', function() {
+  $('.error-pass-new').text("")
+})
 
 const confirm_ChangePassword = () => {
-    const token = localStorage.getItem("token");
-    var current_password = $("#current_password").val();
-    var new_password = $("#new_password").val();
-    if (current_password == "" || new_password == "") {
-        alert("Vui lòng điền đủ thông tin!");
-        return;
-    }
-    $.ajax({
-        url: "http://localhost:8000/api/changepassword",
-        type: "POST",
-        dataType: "json",
-        data: {
-            token: token,
-            current_password: current_password,
-            new_password: new_password
-        },
-    })
+  const token = localStorage.getItem("token");
+  var current_password = $("#current_password").val();
+  var new_password = $("#new_password").val();
+  if (current_password == "" || new_password == "") {
+    console.log(1);
+    !current_password ? $('.error-pass-current').text("Vui lòng nhập mật khẩu hiện tại") : ""
+    !new_password ? $('.error-pass-new').text("Vui lòng nhập mật khẩu mới") : ""
+    // alert("Vui lòng điền đủ thông tin!");
+    return;
+  }
+  $.ajax({
+    url: "http://localhost:8000/api/changepassword",
+    type: "POST",
+    dataType: "json",
+    data: {
+      token: token,
+      current_password: current_password,
+      new_password: new_password,
+    },
+  })
     .then((data) => {
-    if (data.status) {
-        alert(data.message);
-        window.location.href = "http://localhost/demo-game/src/index.html";
-    } else {
+      if (data.status) {
+        toastr.success(data.message);
+
+        // console.log(21212121);
+        // alert(11)
+        setTimeout(() => {
+          window.location.href = "http://127.0.0.1:5500/src/index.html";
+
+        }, 1000)
+
+      } else {
+        console.log(data.message)
         if (data.message == "Mật khẩu hiện tại không chính xác") {
-            alert(data.message);
-        } else {
-            window.location.href = "http://localhost/demo-game/src/index.html";
-        }
-    }
+          // alert(data.message);
+          toastr.error(data.message);
+        } 
+        // else {
+        //   window.location.href = "http://127.0.0.1:5500/src/index.html";
+        // }
+      }
     })
     .catch((error) => {
-    console.log(error);
+      console.log(error);
     });
-}
-
+};
 
 $(document).ready(function () {
-    categories();
-    trendingProducts();
+  categories();
+  trendingProducts();
 });
-
-// const searchProduct = () => {
-//     const input = $("#searchInput").val();
-//     $.ajax({
-//         url: `http://localhost:8000/api/search?product=${input}`,
-//         type: "GET",
-//         dataType: "json",
-//     })
-//     .then((data) => {
-//     if (data && data.data.length > 0) {
-//         let listItem = "";
-//         data.data.map((item, index) => {
-//         let price = item.price - (item.price * item.discount) / 100;
-//         listItem += `
-//             <div class="item-frames" >
-//                 <div class="item-wrapper">
-//                 <a href="#">
-//                     <img
-//                     class="img-product"
-//                     src="http://127.0.0.1:8080/storage/products/${item.image}"
-//                     alt="product"
-//                     />
-//                 </a>
-//                 <div class="item-info">
-//                     <a href="#">
-//                     <div class="item-title">${item.name}</div>
-//                     </a>
-//                     <div class="item-price">
-//                     <span class="current-price"> ${price}đ </span>
-//                     <span class="price-block">
-//                         <span class="old-price">${
-//                         item.discount === 0 ? "" : item.price
-//                         }${item.discount === 0 ? "" : "đ"}</span>
-//                         <span class="discount-price">${
-//                         item.discount === 0 ? "" : "-"
-//                         }${item.discount === 0 ? "" : item.discount}${
-//             item.discount === 0 ? "" : "%"
-//         }</span>
-//                     </span>
-//                     </div>
-//                     <div class="item-cart">
-//                     <a href="#">
-//                         <i class="fas fa-shopping-cart"></i>
-//                     </a>
-//                     </div>
-//                     <div id="${item.id}" class="item-btn">Mua ngay</div>
-//                 </div>
-//                 </div>
-//             </div>
-//         `;
-//             $('body').on('click','#'+ item.id +'', run(item.id));
-//         });
-//         $(".service").html(listItem);
-//         $(".view-more").html("Tải thêm sản phẩm");
-//     } else {
-//         $(".view-more").html("Không có sản phẩm nào cả!");
-//     }
-//     console.log(data);
-//     })
-//     .catch((error) => {
-//     console.log(error);
-//     });
-// };
-
-// const buyProduct = (product_id) => {
-//     var result = confirm("Bạn có muốn mua sản phẩm này!");
-//     console.log(result);
-//     if(result){
-//         const token = localStorage.getItem("token");
-//         if(token == null){
-//             alert("Bạn phải đăng nhập để mua sản phẩm");
-//             return;
-//         }
-//         $.ajax({
-//             url: "http://localhost:8000/api/payment",
-//             type: "POST",
-//             data: {
-//                 token: token,
-//                 product_id: product_id,
-//             },
-//             dataType: "json",
-//         })
-//         .then((data) => {
-//             if (data.status) {
-//                 alert('Mua thành công vui lòng kiểm tra sản phẩm của bạn trong phần lịch sử mua hàng!');
-//             }
-//             else{
-//                 if(data.message.includes("Token")){
-//                     window.location.href = "http://localhost/demo-game/src/index.html";
-//                 }
-//                 else{
-//                     alert(data.message);
-//                 }
-//             }
-//         })
-//         .catch((error) => {
-//             console.log(error);
-//         });
-//     }
-// }
-
-// function run(product_id){
-//     return () => buyProduct(product_id);
-// }
-

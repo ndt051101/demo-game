@@ -373,7 +373,7 @@ hr {
   color: #575757;
   background: white;
   width: 42%;
-  margin: -23px auto -6px auto;
+  margin: -5px auto -6px auto;
 }
 .header-container .header-content .right-content .user .modal-dialog .modal-content .modal-body .content-login .form-login .other-login .list-login {
   margin-bottom: 6px;
@@ -708,6 +708,7 @@ hr {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: 0 20px;
 }
 .main-container .main-content .product .list-title {
   margin-bottom: 20px;
@@ -922,6 +923,8 @@ hr {
   color: #21beff;
   cursor: pointer;
   border: unset;
+
+  display: none;
 }
 .main-container .main-content .product .view-more:hover {
   color: #017fff;
@@ -1088,7 +1091,7 @@ hr {
 }
 .main-container .main-content .recharge-container .account-info .account-info-item span {
   font-weight: 500;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .main-container .main-content .recharge-container .account-info .account-info-link {
   margin: 0 2px;
@@ -1138,6 +1141,10 @@ hr {
 .main-container .main-content .recharge-container .account-body-pass .panel-body {
   margin-bottom: 1rem;
   text-align: left;
+}
+
+.button-qrcode {
+  margin-top: 14px;
 }
 .main-container .main-content .footer-container .footer-top {
   border-bottom: thin solid #b3b2b2;
